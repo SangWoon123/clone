@@ -1,0 +1,235 @@
+:root {
+  /*color*/
+  --white-color: #ffffff;
+  --black-color: #202020;
+  --blue-color: #1c7ed6;
+  --red-color: #cc0000;
+  --grey-dark-color: #414141;
+  --grey-light-color: #bdc3c9;
+
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+body {
+  font-family: Roboto;
+  height: 200vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 12px;
+  z-index: 99;
+}
+
+header .logo i {
+  color: var(--red-color);
+  margin-right: 5px;
+}
+
+header .icons i {
+  margin-right: 10px;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+.player {
+  position: sticky;
+  text-align: center;
+  background-color: black;
+}
+.infoAndUpNext .info {
+  padding: var(--spacing);
+}
+.info .metadata .hashtag {
+  display: flex;
+  list-style: none;
+  color: var(--blue-color);
+  font-size: var(--font-small);
+}
+.info .metadata .hashtag li {
+  margin-right: 8px;
+}
+.info .metadata .titleButton {
+  display: flex;
+}
+.info .metadata .titleButton .title {
+  font-size: var(--font-medium);
+  margin-right: 12px;
+}
+
+.info .metadata .titleButton .title .clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.info .metadata .titleButton .title .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleButton .moreBtn .clicked {
+  transform: rotate(180deg);
+}
+.view {
+  font-size: var(--font-small);
+  color: var(--grey-light-color);
+}
+
+.info .action {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 15px 0;
+}
+.info .action button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.info .action button i {
+  margin: 0 auto;
+  margin-bottom: calc(12 / 2);
+  font-size: 18px;
+}
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+.info .channel .metadata .info .subcribe {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+.info .channel .subcribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+.upNext {
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.upNext > .title {
+  font-size: var(--font-small);
+  color: var(--grey-light-color);
+  margin: 7px 0;
+}
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+.upNext .item .img {
+  flex-basis: 35%;
+  margin-right: 12px;
+  position: relative;
+}
+.upNext .item .img img {
+  width: 100%;
+  margin-right: 12px;
+}
+
+.upNext .item .itemInfo span:nth-child(2) {
+  margin: 3px 0;
+}
+
+.upNext .item .itemInfo {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+}
+.upNext.item .moreBtn {
+  flex: 1 1 5%;
+  height: 100%;
+}
+.upNext .item .itemInfo .title {
+  font-size: var(--font-small);
+}
+.upNext .item .itemInfo .name,
+.upNext .item .itemInfo .view {
+  font-size: 12px;
+  color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .img .play-time {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  color: white;
+  font-size: 13px;
+  padding: 3px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+  .infoAndUpNext .info {
+    flex-basis: 60%;
+  }
+  .infoAndUpNext .upNext {
+    flex-basis: 40%;
+  }
+}
